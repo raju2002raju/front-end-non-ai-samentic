@@ -19,7 +19,7 @@ const FileUpload = () => {
     formData.append('file', selectedFile);
     try {
       setIsLoading(true);
-      const response = await axios.post('http://localhost:8080/upload', formData, {
+      const response = await axios.post('https://back-end-samentic.vercel.app//upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -43,7 +43,7 @@ const FileUpload = () => {
     if (searchQuery.trim() === '' || extractedText.length === 0) return;
     try {
       setIsLoading(true);
-      const response = await axios.post('http://localhost:8080/search', {
+      const response = await axios.post('https://back-end-samentic.vercel.app//search', {
         query: searchQuery,
         paragraphs: extractedText
       });
